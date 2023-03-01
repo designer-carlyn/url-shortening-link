@@ -1,6 +1,9 @@
 import React from "react";
 // import axios from "axios";
 
+/* Import Style */
+import "@fontsource/poppins/500.css";
+import "@fontsource/poppins/700.css";
 import "../scss/layout/index.scss";
 
 const IndexPage = () => {
