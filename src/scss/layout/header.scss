@@ -1,0 +1,11 @@
+@forward "../helpers/variables.scss";
+
+.header {
+  background-color: #ededed;
+
+  &__container {
+    img {
+      width: 500px;
+    }
+  }
+}

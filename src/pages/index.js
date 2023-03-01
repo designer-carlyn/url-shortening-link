@@ -1,6 +1,9 @@
 import React from "react";
 // import axios from "axios";
 
+/* Import Components */
+import Header from "../components/header";
+
 /* Import Style */
 import "@fontsource/poppins/500.css";
 import "@fontsource/poppins/700.css";
@@ -63,7 +66,7 @@ const IndexPage = () => {
 
   return (
     <main>
-      <h1>THIS IS HOMEPAGE</h1>
+      <Header />
       {/* <form onSubmit={handleSubmit}>
         <input type="text" onChange={handleChange} />
         <button>Shorten It!</button>
