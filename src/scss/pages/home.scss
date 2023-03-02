@@ -1,6 +1,7 @@
 .hero-banner {
   background: #ffffff;
-  padding: 150px 0;
+  padding: 150px 0 250px;
+  overflow: hidden;
 
   &__container {
     display: grid;
@@ -12,7 +13,7 @@
       align-self: center;
 
       h1 {
-        color: var(--dark-violet);
+        color: var(--v-dark-blue);
         font-size: 70px;
         line-height: 1.3;
       }
@@ -31,6 +32,85 @@
         right: -200px;
         top: 50%;
         transform: translateY(-50%);
+      }
+    }
+  }
+}
+
+.shorten {
+  background: #f0f1f6;
+  padding: 0 0 100px;
+
+  &__container {
+    &-holder {
+      position: relative;
+      top: -70px;
+    }
+
+    &-form {
+      background-color: var(--dark-violet);
+      background-image: url(https://ik.imagekit.io/csdesigner/url_shortening_link/bg-shorten-desktop_r9yX_xSH5.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1677662849392);
+      background-position: center;
+      background-size: cover;
+      padding: 50px 25px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      grid-gap: 10px;
+
+      .input-group {
+        position: relative;
+        width: 100%;
+        margin-right: 40px;
+
+        input {
+          font-family: "Poppins", sans-serif;
+          min-height: 50px;
+          border-radius: 5px;
+          outline: 0;
+          font-size: 16px;
+          padding: 0 15px;
+          width: 100%;
+          
+  
+          &:focus {
+            border-color: var(--c-cyan);
+          }
+        }
+  
+        .link-validation {
+          color: var(--c-red);
+          position: absolute;
+          font-style: italic;
+          margin-top: 7px;
+          font-size: 14px;
+        }
+      }
+    }
+
+    &-list {
+      .list-item {
+        padding: 15px 20px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        margin-top: 15px;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        grid-gap: 25px;
+        font-size: 20px;
+
+        .item-original-link {
+          color: var(--v-dark-blue);
+        }
+
+        .item-shorten-link {
+          margin-left: auto;
+          
+          a {
+            color: var(--c-cyan);
+          }
+        }
       }
     }
   }

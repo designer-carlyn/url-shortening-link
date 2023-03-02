@@ -4,6 +4,7 @@ import React from "react";
 /* Import Components */
 import Header from "../components/header";
 import HeroBanner from "../components/hero-banner";
+import Shorten from "../components/shorten";
 
 /* Import Style */
 import "@fontsource/poppins/500.css";
@@ -71,6 +72,7 @@ const IndexPage = () => {
     <main>
       <Header />
       <HeroBanner />
+      <Shorten />
       {/* <form onSubmit={handleSubmit}>
         <input type="text" onChange={handleChange} />
         <button>Shorten It!</button>
