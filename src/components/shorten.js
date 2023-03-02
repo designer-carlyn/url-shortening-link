@@ -77,16 +77,14 @@ const Shorten = () => {
         <div className="shorten__container">
           <div className="shorten__container-holder">
             <form onSubmit={handleSubmit} className="shorten__container-form">
-              <div className="input-group">
-                <input
-                  onChange={handleChange}
-                  type="text"
-                  className="input-link"
-                  placeholder="Shorten a link here..."
-                  id="input-link-id"
-                />
-                {/* <small className="link-validation">Please add a link</small> */}
-              </div>
+              <input
+                onChange={handleChange}
+                type="text"
+                className="input-link"
+                placeholder="Shorten a link here..."
+                id="input-link-id"
+              />
+              {/* <small className="link-validation">Please add a link</small> */}
               <button className="btn btn--lg">Shorten It</button>
             </form>
             <div className="shorten__container-list">
