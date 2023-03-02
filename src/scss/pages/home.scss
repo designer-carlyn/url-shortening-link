@@ -67,7 +67,7 @@
         font-size: 16px;
         padding: 0 15px;
         width: 100%;
-        border-color: none;
+        border-color: transparent;
         
         &:focus {
           border-color: var(--c-cyan);
@@ -195,6 +195,26 @@
       background-color: var(--c-cyan);
       top: 50%;
       transform: translateY(-50%);
+    }
+  }
+}
+
+.advertisement {
+  background-color: var(--dark-violet);
+  background-image: url(https://ik.imagekit.io/csdesigner/url_shortening_link/bg-boost-desktop_AKpOhsIch.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1677662848455);
+  background-position: center;
+  background-size: cover;
+  padding: 70px 0;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h5 {
+      color: #ffffff;
+      font-size: 40px;
+      margin-bottom: 15px;
     }
   }
 }
