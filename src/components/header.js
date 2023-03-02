@@ -28,8 +28,10 @@ const Header = () => {
             </ul>
           </div>
           <div className="header__container-form">
-            <button>Login</button>
-            <button>Sign Up</button>
+            <button className="button button--md button--radius">Login</button>
+            <button className="button button--md button--radius">
+              Register
+            </button>
           </div>
         </div>
       </div>

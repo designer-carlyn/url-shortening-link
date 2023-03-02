@@ -1,0 +1,33 @@
+.button {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--c-cyan);
+  color: #ffffff;
+  font-weight: 700;
+  border: 0;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &.button--radius {
+    border-radius: 25px;
+  }
+
+  &.button--lg {
+    font-size: 20px;
+    min-width: 160px;
+  }
+
+  &.button--md {
+    font-size: 16px;
+    min-width: 110px;
+  }
+
+  &.button--sm {
+    font-size: 14px;
+    min-width: 100px;
+  }
+
+  &:hover {
+    background-color: #9be3e2;
+  }
+}
