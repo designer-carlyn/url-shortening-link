@@ -3,12 +3,14 @@ import React from "react";
 
 /* Import Components */
 import Header from "../components/header";
+import HeroBanner from "../components/hero-banner";
 
 /* Import Style */
 import "@fontsource/poppins/500.css";
 import "@fontsource/poppins/600.css";
 import "@fontsource/poppins/700.css";
 import "../scss/layout/index.scss";
+import "../scss/pages/home.scss";
 
 const IndexPage = () => {
   // const [originalLink, setOriginalLink] = useState("");
@@ -68,6 +70,7 @@ const IndexPage = () => {
   return (
     <main>
       <Header />
+      <HeroBanner />
       {/* <form onSubmit={handleSubmit}>
         <input type="text" onChange={handleChange} />
         <button>Shorten It!</button>
