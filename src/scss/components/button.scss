@@ -28,6 +28,14 @@
     min-width: 100px;
   }
 
+  &.btn--copied {
+    background-color: var(--dark-violet);
+
+    &:hover {
+      background-color: #64518f;
+    }
+  }
+
   &:hover {
     background-color: #9be3e2;
   }

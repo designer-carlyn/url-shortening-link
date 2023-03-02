@@ -23,9 +23,17 @@ const Shorten = () => {
     setCounter((count) => count + 1);
   }
 
-  const copyLink = (value, index) => {
+  const copyLink = (value, id) => {
     navigator.clipboard.writeText(value);
-    console.log(index);
+    const newState = linkList.map((link) => {
+      if (link.id === id) {
+        return { ...link, copyLink: "true" };
+      }
+
+      return link;
+    });
+
+    setLinkList(newState);
   };
 
   // const deleteLink = (id) => {
@@ -50,10 +58,10 @@ const Shorten = () => {
       setLinkList([
         ...linkList,
         {
+          id: counter,
+          copyLink: false,
           fullLink: originalLink,
           shortLink: shortenLink,
-          copyLink: false,
-          id: counter,
         },
       ]);
       setOriginalLink("");
@@ -90,10 +98,14 @@ const Shorten = () => {
                       </a>
                     </div>
                     <button
-                      className="btn btn--sm"
-                      onClick={() => copyLink(link.shortLink)}
+                      className={
+                        link.copyLink
+                          ? "btn btn--sm btn--copied"
+                          : "btn btn--sm"
+                      }
+                      onClick={() => copyLink(link.shortLink, link.id)}
                     >
-                      Copy
+                      {link.copyLink ? "Copied!" : "Copy"}
                     </button>
                   </div>
                 );
