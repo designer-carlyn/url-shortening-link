@@ -21,6 +21,7 @@ const Shorten = () => {
     event.preventDefault();
     getShortLink();
     setCounter((count) => count + 1);
+    document.getElementById("input-link-id").value = "";
   }
 
   const copyLink = (value, id) => {
@@ -82,6 +83,7 @@ const Shorten = () => {
                   type="text"
                   className="input-link"
                   placeholder="Shorten a link here..."
+                  id="input-link-id"
                 />
                 {/* <small className="link-validation">Please add a link</small> */}
               </div>

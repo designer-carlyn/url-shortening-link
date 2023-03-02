@@ -5,6 +5,7 @@ import React from "react";
 import Header from "../components/header";
 import HeroBanner from "../components/hero-banner";
 import Shorten from "../components/shorten";
+import Features from "../components/features";
 
 /* Import Style */
 import "@fontsource/poppins/500.css";
@@ -19,6 +20,7 @@ const IndexPage = () => {
       <Header />
       <HeroBanner />
       <Shorten />
+      <Features />
     </main>
   );
 };

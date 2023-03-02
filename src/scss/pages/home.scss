@@ -57,6 +57,7 @@
       display: flex;
       align-items: center;
       grid-gap: 10px;
+      box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.1);
 
       .input-group {
         position: relative;
@@ -94,12 +95,13 @@
         background-color: #ffffff;
         border: 1px solid rgba(0,0,0,0.1);
         border-radius: 5px;
-        margin-top: 10px;
+        margin-top: 15px;
         display: flex;
         align-items: center;
         flex-wrap: wrap;
         grid-gap: 25px;
         font-size: 18px;
+        box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.05);
 
         .item-original-link {
           color: var(--v-dark-blue);
@@ -113,6 +115,92 @@
           }
         }
       }
+    }
+  }
+}
+
+.features {
+  padding-bottom: 100px;
+  background: #f0f1f6;
+
+  &__header {
+    text-align: center;
+
+    h3 {
+      color: var(--v-dark-blue);
+      font-size: 40px;
+      line-height: 1.3;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: var(--grayish-violet);
+      font-size: 20px;
+      max-width: 600px;
+      margin: auto;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    margin-top: 100px;
+    position: relative;
+
+    .features-item {
+      border-radius: 5px;
+      background: #ffffff;
+      box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.1);
+      padding: 70px 30px 50px;
+      position: relative;
+      height: max-content;
+
+      .item-icon {
+        width: 80px;
+        height: 80px;
+        background-color: var(--dark-violet);
+        border-radius: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: -40px;
+
+        img {
+          width: 40px;
+        }
+      }
+
+      h4 {
+        color: var(--v-dark-blue);
+        font-size: 20px;
+      }
+
+      p {
+        font-size: 16px;
+        color: var(--grayish-violet);
+        margin-top: 10px;
+        line-height: 1.6;
+      }
+
+      &.detailed-records {
+        margin-top: 40px;
+      }
+
+      &.fully-customizable {
+        margin-top: 80px;
+      }
+    }
+
+    &:before {
+      content: '';
+      width: 100%;
+      position: absolute;
+      height: 8px;
+      background-color: var(--c-cyan);
+      top: 50%;
+      transform: translateY(-50%);
     }
   }
 }
