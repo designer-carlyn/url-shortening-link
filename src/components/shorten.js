@@ -83,7 +83,7 @@ const Shorten = () => {
                   className="input-link"
                   placeholder="Shorten a link here..."
                 />
-                <small className="link-validation">Please add a link</small>
+                {/* <small className="link-validation">Please add a link</small> */}
               </div>
               <button className="btn btn--lg">Shorten It</button>
             </form>
@@ -97,16 +97,22 @@ const Shorten = () => {
                         {link.shortLink}
                       </a>
                     </div>
-                    <button
-                      className={
-                        link.copyLink
-                          ? "btn btn--sm btn--copied"
-                          : "btn btn--sm"
-                      }
-                      onClick={() => copyLink(link.shortLink, link.id)}
-                    >
-                      {link.copyLink ? "Copied!" : "Copy"}
-                    </button>
+                    {link.copyLink ? (
+                      <button
+                        className="btn btn--sm btn--copied"
+                        disabled
+                        onClick={() => copyLink(link.shortLink, link.id)}
+                      >
+                        Copied
+                      </button>
+                    ) : (
+                      <button
+                        className="btn btn--sm"
+                        onClick={() => copyLink(link.shortLink, link.id)}
+                      >
+                        Copy
+                      </button>
+                    )}
                   </div>
                 );
               })}
