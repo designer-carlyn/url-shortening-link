@@ -9,6 +9,15 @@
     grid-gap: 25px;
     position: relative;
 
+    &-image-mobile {
+      display: none;
+
+      img {
+        width: 100%;
+        max-width: 400px;
+      }
+    }
+
     &-text {
       align-self: center;
 
@@ -32,6 +41,36 @@
         right: -200px;
         top: 50%;
         transform: translateY(-50%);
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 50px 0 150px;
+    
+
+    &__container {
+      grid-template-columns: repeat(1, 1fr);
+      text-align: center;
+    
+      &-image-mobile {
+        display: block;
+      }
+
+      &-text {
+        h1 {
+          font-size: 35px;
+          line-height: 1;
+          margin-bottom: 10px;
+        }
+
+        h2 {
+          font-size: 16px;
+        }
+      }
+  
+      &-image {
+        display: none;
       }
     }
   }

@@ -5,6 +5,12 @@ const HeroBanner = () => {
     <section className="hero-banner">
       <div className="container">
         <div className="hero-banner__container">
+          <div className="hero-banner__container-image-mobile">
+            <img
+              src="https://ik.imagekit.io/csdesigner/url_shortening_link/illustration-working_C0jfjmFgWi.svg?ik-sdk-version=javascript-1.4.3&updatedAt=1677662848279"
+              alt=""
+            />
+          </div>
           <div className="hero-banner__container-text">
             <h1>More than just shorter links</h1>
             <h2>
