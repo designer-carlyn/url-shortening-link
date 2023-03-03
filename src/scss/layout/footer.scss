@@ -1,0 +1,71 @@
+@forward "../helpers/variables.scss";
+
+.footer {
+  background-color: var(--v-dark-violet);
+  color: #ffffff;
+  padding: 80px 0;
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 15px;
+
+    &-logo {
+      img {
+        width: 200px;
+      }
+    }
+
+    &-link {
+      h6 {
+        font-size: 18px;
+        margin-bottom: 15px;
+      }
+
+      ul {
+        list-style: none;
+
+        li {
+          font-size: 14px;
+          color: var(--grayish-violet);
+          margin-bottom: 5px;
+          cursor: pointer;
+
+          &:hover {
+            color: var(--c-cyan);
+          }
+        }
+      }
+    }
+
+    &-social {
+      h6 {
+        font-size: 18px;
+        margin-bottom: 15px;
+      }
+
+      ul {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        grid-gap: 15px;
+
+        li {
+          img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+            object-position: center;
+            filter: invert(1);
+          }
+
+          &:hover {
+            img {
+              filter: invert(93%) sepia(65%) saturate(7396%) hue-rotate(128deg) brightness(85%) contrast(90%);
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -7,6 +7,7 @@ import HeroBanner from "../components/hero-banner";
 import Shorten from "../components/shorten";
 import Features from "../components/features";
 import Advertisement from "../components/advertisement";
+import Footer from "../components/footer";
 
 /* Import Style */
 import "@fontsource/poppins/500.css";
@@ -23,6 +24,7 @@ const IndexPage = () => {
       <Shorten />
       <Features />
       <Advertisement />
+      <Footer />
     </main>
   );
 };
