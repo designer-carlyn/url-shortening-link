@@ -11,6 +11,8 @@ const Shorten = () => {
 
   const [counter, setCounter] = useState(0);
 
+  const [errorStatus, setErrorStatus] = useState(null);
+
   const API_LINK = "https://api.shrtco.de/v2/shorten?url=";
 
   function handleChange(event) {
@@ -49,7 +51,13 @@ const Shorten = () => {
       const response = await axios.get(url);
       setShortLink(response.data.result["full_short_link"]);
     } catch (error) {
-      console.log(error);
+      if (error.response.data.error_code === 2) {
+        setErrorStatus("This is not a valid URL");
+      } else if (error.response.data.error_code === 3) {
+        setErrorStatus("Wait a second and try again");
+      } else {
+        setErrorStatus("Unexpected error occured. Please try again");
+      }
     }
   }
 
@@ -87,7 +95,9 @@ const Shorten = () => {
                 placeholder="Shorten a link here..."
                 id="input-link-id"
               />
-              {/* <small className="link-validation">Please add a link</small> */}
+              {errorStatus !== null ? (
+                <small className="link-validation">{errorStatus}</small>
+              ) : null}
               <button className="btn btn--lg">Shorten It</button>
             </form>
             <div className="shorten__container-list">
