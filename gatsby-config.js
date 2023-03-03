@@ -2,9 +2,6 @@
  * @type {import('gatsby').GatsbyConfig}
  */
 module.exports = {
-  flags: {
-    DEV_SSR: true,
-  },
   siteMetadata: {
     title: `URL Shortening Link`,
     siteUrl: `https://www.yourdomain.tld`,

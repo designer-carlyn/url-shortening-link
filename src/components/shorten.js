@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-const initialState = JSON.parse(localStorage.getItem("linkList") || "[]");
-
 const Shorten = () => {
   const [originalLink, setOriginalLink] = useState("");
   const [url, setUrl] = useState("");
   const [shortenLink, setShortLink] = useState("");
-  const [linkList, setLinkList] = useState(initialState);
+  const [linkList, setLinkList] = useState([]);
 
   const [counter, setCounter] = useState(0);
 
@@ -80,6 +78,10 @@ const Shorten = () => {
     if (linkList.length > 0) {
       localStorage.setItem("linkList", JSON.stringify(linkList));
     }
+
+    setTimeout(() => {
+      setLinkList(JSON.parse(localStorage.getItem("linkList") || "[]"));
+    }, 1000);
   }, [shortenLink, linkList, originalLink, counter]);
 
   return (
