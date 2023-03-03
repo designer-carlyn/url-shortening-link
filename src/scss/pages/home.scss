@@ -153,6 +153,18 @@
         }
       }
     }
+
+    &-delete {
+      button {
+        background-color: var(--c-red);
+        width: 100%;
+        margin-top: 15px;
+
+        &:hover {
+          background-color: #fba4a4;
+        }
+      }
+    }
   }
 
   @media screen and (max-width: 425px) {

@@ -5,7 +5,9 @@ const Shorten = () => {
   const [originalLink, setOriginalLink] = useState("");
   const [url, setUrl] = useState("");
   const [shortenLink, setShortLink] = useState("");
-  const [linkList, setLinkList] = useState([]);
+  const [linkList, setLinkList] = useState(
+    JSON.parse(localStorage.getItem("linkList") || "[]")
+  );
 
   const [counter, setCounter] = useState(0);
 
@@ -20,7 +22,7 @@ const Shorten = () => {
   function handleSubmit(event) {
     event.preventDefault();
     getShortLink();
-    setCounter((count) => count + 1);
+    setCounter(() => linkList.length + 1);
     document.getElementById("input-link-id").value = "";
   }
 
@@ -37,13 +39,10 @@ const Shorten = () => {
     setLinkList(newState);
   };
 
-  // const deleteLink = (id) => {
-  //   setLinkList((prevList) => {
-  //     return prevList.filter((linkItem, index) => {
-  //       return index != id;
-  //     });
-  //   });
-  // };
+  const deleteAllLink = () => {
+    setLinkList([]);
+    localStorage.removeItem("linkList");
+  };
 
   async function getShortLink() {
     try {
@@ -68,6 +67,10 @@ const Shorten = () => {
       setOriginalLink("");
       setUrl("");
       setShortLink("");
+    }
+
+    if (linkList.length > 0) {
+      localStorage.setItem("linkList", JSON.stringify(linkList));
     }
   }, [shortenLink, linkList, originalLink, counter]);
 
@@ -117,6 +120,13 @@ const Shorten = () => {
                 );
               })}
             </div>
+            {linkList >= 0 ? null : (
+              <div className="shorten__container-delete">
+                <button className="btn btn--lg" onClick={deleteAllLink}>
+                  Remove All
+                </button>
+              </div>
+            )}
           </div>
         </div>
       </div>
