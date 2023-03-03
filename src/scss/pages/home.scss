@@ -129,22 +129,73 @@
         border: 1px solid rgba(0,0,0,0.1);
         border-radius: 5px;
         margin-top: 15px;
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: 1fr 1fr auto;
         grid-gap: 25px;
         font-size: 18px;
         box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.05);
 
         .item-original-link {
           color: var(--v-dark-blue);
+          overflow: hidden;
+          text-overflow: ellipsis;
+          align-self: center;
+          white-space: nowrap;
         }
 
         .item-shorten-link {
           margin-left: auto;
-          
+          align-self: center;
+
           a {
             color: var(--c-cyan);
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 425px) {
+    &__container {
+      &-form {
+        padding: 20px 15px;
+        flex-direction: column;
+
+        input {
+          width: calc(100% - 30px);
+        }
+
+        .link-validation {
+          top: 77px;
+          left: 15px;
+          font-size: 11px;
+        }
+
+        button {
+          width: 100%;
+          margin-top: 15px;
+        }
+      }
+
+      &-list {
+        .list-item {
+          grid-template-columns: repeat(1, 1fr);
+          grid-gap: 0;
+          padding: 0;
+          font-size: 16px;
+
+          .item-original-link {
+            padding: 10px 15px;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+          }
+
+          .item-shorten-link {
+            margin-left: 0;
+            padding: 10px 15px;
+          }
+
+          button {
+            margin: 0 15px 15px 15px;
           }
         }
       }
@@ -236,6 +287,38 @@
       transform: translateY(-50%);
     }
   }
+
+  @media screen and (max-width: 768px) {
+    &__header {
+      h3 {
+        font-size: 25px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+    }
+
+    &__list {
+      grid-template-columns: repeat(1, 1fr);
+
+      .features-item {
+        text-align: center;
+
+        .item-icon {
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+
+      &:before {
+        width: 8px;
+        height: 100%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
 }
 
 .advertisement {
@@ -254,6 +337,12 @@
       color: #ffffff;
       font-size: 40px;
       margin-bottom: 15px;
+    }
+
+    @media screen and (max-width: 425px) {
+      h5 {
+        font-size: 25px;
+      }
     }
   }
 }

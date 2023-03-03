@@ -31,6 +31,9 @@ const Header = () => {
             <button className="btn btn--md btn--radius">Login</button>
             <button className="btn btn--md btn--radius">Register</button>
           </div>
+          <div className="header__container-menu">
+            <div className="menu-line"></div>
+          </div>
         </div>
       </div>
     </header>
