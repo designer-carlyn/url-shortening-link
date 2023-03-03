@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
+const initialState = JSON.parse(localStorage.getItem("linkList") || "[]");
+
 const Shorten = () => {
   const [originalLink, setOriginalLink] = useState("");
   const [url, setUrl] = useState("");
   const [shortenLink, setShortLink] = useState("");
-  const [linkList, setLinkList] = useState(
-    JSON.parse(localStorage.getItem("linkList") || "[]")
-  );
+  const [linkList, setLinkList] = useState(initialState);
 
   const [counter, setCounter] = useState(0);
 
