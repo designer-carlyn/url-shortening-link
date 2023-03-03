@@ -82,7 +82,7 @@ const Shorten = () => {
     setTimeout(() => {
       setLinkList(JSON.parse(localStorage.getItem("linkList") || "[]"));
     }, 1000);
-  }, [shortenLink, linkList, originalLink, counter]);
+  }, [shortenLink, linkList, originalLink, counter, errorStatus]);
 
   return (
     <section className="shorten">
