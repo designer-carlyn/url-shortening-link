@@ -29,7 +29,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Solution URL](https://www.frontendmentor.io/solutions/notification-page-with-htmlcssreactjs-k9zzV0Bw0-)
+- Solution URL: [Solution URL](https://www.frontendmentor.io/solutions/url-shortening-api-landing-page-with-reactjs-Jdqi3Cf15N)
 - Live Site URL: [Live site URL](https://cs-url-shortening-link.netlify.app/)
 
 ### Built with
