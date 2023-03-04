@@ -8,10 +8,9 @@ const Shorten = () => {
   const [linkList, setLinkList] = useState([]);
 
   const [counter, setCounter] = useState(0);
-
   const [errorStatus, setErrorStatus] = useState(null);
-
   const [enableShorten, setEnableShorten] = useState(false);
+  const [showLoader, setShowLoader] = useState(false);
 
   const API_LINK = "https://api.shrtco.de/v2/shorten?url=";
 
@@ -34,17 +33,12 @@ const Shorten = () => {
     setEnableShorten(false);
   }
 
-  const copyLink = (value, id) => {
+  const copyLink = (value) => {
     navigator.clipboard.writeText(value);
-    const newState = linkList.map((link) => {
-      if (link.id === id) {
-        return { ...link, copyLink: "true" };
-      }
-
-      return link;
-    });
-
-    setLinkList(newState);
+    setShowLoader(true);
+    setTimeout(() => {
+      setShowLoader(false);
+    }, 2000);
   };
 
   const deleteAllLink = () => {
@@ -73,7 +67,6 @@ const Shorten = () => {
         ...linkList,
         {
           id: counter,
-          copyLink: false,
           fullLink: originalLink,
           shortLink: shortenLink,
         },
@@ -126,22 +119,14 @@ const Shorten = () => {
                         {link.shortLink}
                       </a>
                     </div>
-                    {link.copyLink ? (
-                      <button
-                        className="btn btn--sm btn--copied"
-                        disabled
-                        onClick={() => copyLink(link.shortLink, link.id)}
-                      >
-                        Copied
-                      </button>
-                    ) : (
-                      <button
-                        className="btn btn--sm"
-                        onClick={() => copyLink(link.shortLink, link.id)}
-                      >
-                        Copy
-                      </button>
-                    )}
+                    <button
+                      className={
+                        showLoader ? "btn btn--sm active" : "btn btn--sm"
+                      }
+                      onClick={() => copyLink(link.shortLink, link.id)}
+                    >
+                      {showLoader ? "Copied" : "Copy"}
+                    </button>
                   </div>
                 );
               })}
