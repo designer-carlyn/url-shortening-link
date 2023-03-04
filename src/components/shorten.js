@@ -113,7 +113,7 @@ const Shorten = () => {
               {linkList.map((link) => {
                 return (
                   <div className="list-item" key={link.id}>
-                    <div className="item-original-link">{link.fullLink}</div>
+                    <h2 className="item-original-link">{link.fullLink}</h2>
                     <div className="item-shorten-link">
                       <a href={link.shortLink} target="__blank">
                         {link.shortLink}

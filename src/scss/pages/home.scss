@@ -147,11 +147,14 @@
           text-overflow: ellipsis;
           align-self: center;
           white-space: nowrap;
+          font-size: 18px;
+          font-weight: 500;
         }
 
         .item-shorten-link {
           margin-left: auto;
           align-self: center;
+          font-weight: 600;
 
           a {
             color: var(--c-cyan);
