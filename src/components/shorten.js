@@ -86,7 +86,7 @@ const Shorten = () => {
   }, [shortenLink, linkList, originalLink, counter, errorStatus]);
 
   return (
-    <section className="shorten">
+    <div className="shorten">
       <div className="container">
         <div className="shorten__container">
           <div className="shorten__container-holder">
@@ -141,7 +141,7 @@ const Shorten = () => {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
