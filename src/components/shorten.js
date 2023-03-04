@@ -10,7 +10,7 @@ const Shorten = () => {
   const [counter, setCounter] = useState(0);
   const [errorStatus, setErrorStatus] = useState(null);
   const [enableShorten, setEnableShorten] = useState(false);
-  const [showLoader, setShowLoader] = useState(false);
+  const [loading, setLoading] = useState(new Set());
 
   const API_LINK = "https://api.shrtco.de/v2/shorten?url=";
 
@@ -33,11 +33,16 @@ const Shorten = () => {
     setEnableShorten(false);
   }
 
-  const copyLink = (value) => {
+  const copyLink = (value, id) => {
     navigator.clipboard.writeText(value);
-    setShowLoader(true);
+    setLoading((prev) => new Set([...prev, id]));
+
     setTimeout(() => {
-      setShowLoader(false);
+      setLoading((prev) => {
+        const updated = new Set(prev);
+        updated.delete(id);
+        return updated;
+      });
     }, 2000);
   };
 
@@ -119,14 +124,18 @@ const Shorten = () => {
                         {link.shortLink}
                       </a>
                     </div>
-                    <button
-                      className={
-                        showLoader ? "btn btn--sm active" : "btn btn--sm"
-                      }
-                      onClick={() => copyLink(link.shortLink, link.id)}
-                    >
-                      {showLoader ? "Copied" : "Copy"}
-                    </button>
+                    {loading.has(link.id) ? (
+                      <button className="btn btn--sm active" disabled>
+                        Copied
+                      </button>
+                    ) : (
+                      <button
+                        className="btn btn--sm"
+                        onClick={() => copyLink(link.shortLink, link.id)}
+                      >
+                        Copy
+                      </button>
+                    )}
                   </div>
                 );
               })}
