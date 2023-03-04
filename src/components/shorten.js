@@ -11,10 +11,17 @@ const Shorten = () => {
 
   const [errorStatus, setErrorStatus] = useState(null);
 
+  const [enableShorten, setEnableShorten] = useState(false);
+
   const API_LINK = "https://api.shrtco.de/v2/shorten?url=";
 
   function handleChange(event) {
     let value = event.target.value;
+    if (value !== "") {
+      setEnableShorten(true);
+    } else {
+      setEnableShorten(false);
+    }
     setOriginalLink(value);
     setUrl(API_LINK + value);
   }
@@ -24,6 +31,7 @@ const Shorten = () => {
     getShortLink();
     setCounter(() => linkList.length + 1);
     document.getElementById("input-link-id").value = "";
+    setEnableShorten(false);
   }
 
   const copyLink = (value, id) => {
@@ -100,7 +108,13 @@ const Shorten = () => {
               {errorStatus !== null ? (
                 <small className="link-validation">{errorStatus}</small>
               ) : null}
-              <button className="btn btn--lg">Shorten It</button>
+              {enableShorten ? (
+                <button className="btn btn--lg">Shorten It</button>
+              ) : (
+                <button className="btn btn--lg" disabled>
+                  Shorten It
+                </button>
+              )}
             </form>
             <div className="shorten__container-list">
               {linkList.map((link) => {

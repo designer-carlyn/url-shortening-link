@@ -30,7 +30,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Solution URL](https://www.frontendmentor.io/solutions/notification-page-with-htmlcssreactjs-k9zzV0Bw0-)
-- Live Site URL: [Live site URL](https://cs-tip-calculator.netlify.app/)
+- Live Site URL: [Live site URL](https://cs-url-shortening-link.netlify.app/)
 
 ### Built with
 
