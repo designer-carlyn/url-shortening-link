@@ -31,6 +31,10 @@ const Shorten = () => {
     setCounter(() => linkList.length + 1);
     document.getElementById("input-link-id").value = "";
     setEnableShorten(false);
+
+    setTimeout(() => {
+      setErrorStatus(null);
+    }, 2000);
   }
 
   const copyLink = (value, id) => {
@@ -102,6 +106,7 @@ const Shorten = () => {
                 className="input-link"
                 placeholder="Shorten a link here..."
                 id="input-link-id"
+                autoComplete="off"
               />
               {errorStatus !== null ? (
                 <small className="link-validation">{errorStatus}</small>
