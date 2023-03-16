@@ -31,4 +31,18 @@ const IndexPage = () => {
 
 export default IndexPage;
 
-export const Head = () => <title>URL Shortening Link</title>;
+export const Head = () => (
+  <>
+    <title>URL Shortening Link</title>
+    <meta property="og:title" content="URL Shortening Link" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:description"
+      content="Try this url shortening to make your link short."
+    />
+    <meta
+      property="og:image"
+      content="https://ik.imagekit.io/csdesigner/my_portfolio/recent_works/url-shortening-link_zlomdqUydS.webp?updatedAt=1678074115351"
+    />
+  </>
+);
